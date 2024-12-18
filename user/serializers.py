@@ -30,6 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
 
         return user
 
+
 class AuthTokenSerializer(serializers.Serializer):
     email = serializers.CharField(
         label=_("Email"),
@@ -65,4 +66,3 @@ class AuthTokenSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code="authorization")
         attrs["user"] = user
         return attrs
-
